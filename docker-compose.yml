@@ -11,7 +11,7 @@ services:
         ports:
             - '8000:8000'
         volumes:
-            - './go-app:/opt/go-app:cached'
+            - './api:/opt/api:cached'
     # MongoDB
     mongo:
         image: 'mongo:4.2.6-bionic'
