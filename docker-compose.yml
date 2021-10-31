@@ -1,7 +1,7 @@
 version: '3.7'
 services:
     # The Go App
-    go-app:
+    api:
         build: ./api
         container_name: api
         depends_on:
@@ -12,6 +12,8 @@ services:
             - '8000:8000'
         volumes:
             - './api:/opt/api:cached'
+        env_file:
+            - .env
     # MongoDB
     mongo:
         image: 'mongo:4.2.6-bionic'

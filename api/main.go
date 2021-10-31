@@ -1,12 +1,16 @@
 package main
 
-import {
-
-	"fmt"
+import(
 	"log"
-}
-
+	"api/db"
+	"api/handlers"
+)
 
 func main() {
-    log.Printfln("Init")
+	if db.CheckConnection() == 0 {
+		log.Fatal("No connect to database")
+		return
+	}
+	
+	handlers.InitHandlers()
 }
